@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+
+	<link href="styles/styles.min.css" rel="stylesheet">
+	
+	<title>HOLSTYAK.BY | Контакты</title>
+</head>
+<body>
+
+	<header>
+
+		<a href="index.html" class="logo">HOLSTYAK.BY</a>
+
+		<nav>
+
+			<ul class="nav__list">
+				<li><a href="index.html" class="nav__link"><span class="material-icons material-icons-outlined">home</span></a></li>
+
+				<li><a href="prices.html" class="nav__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="nav__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="nav__link">Контакты</a></li>
+
+				<li><a href="order.html" class="nav__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="nav__link cart"><span class="material-icons material-icons-outlined">shopping_cart</span></a><span class="cart-count">2</span></li>
+			</ul>
+
+			<a href="javascript: showBurgerMenu()" class="burger-menu"><span class="material-icons material-icons-outlined">menu</span></a>
+
+		</nav>
+		
+	</header>
+
+	<main class="main__contacts">
+		
+		<div class="contacts__map">
+		  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afbdb8f2dad5061fc3b42301fbdd957f49da4a9c7d9793395deb8ce2b821a3cf3&amp;source=constructor" width="980" height="400" frameborder="0"></iframe>
+		 </div>
+
+		<div class="content-contacts">
+				
+			<div class="content-contacts__text">
+
+				<h2 class="content__title">Мы всегда на связи</h2>
+
+				<p class="logo_in-text">Holstyak.by</p>
+				<p class="contacts__name">ИП Кожевникова Мария Геннадьевна<br>УНП: 291609542</p>
+
+				<p><span class="text_bold">Адрес:</span> г.Брест, ул.Горького, 31/1, офис 402</p>
+				<p><span class="text_bold">Время работы:</span> ПН-ВС с 10.00 до 20.00</p>
+
+				<p>
+					<a href="mailto:holstyak.by@yandex.by" target="_blank" class="contacts__email" title="Написать на почту">holstyak.by@yandex.by</a>
+					<br>
+					<a href="tel:+375292251477" target="_blank" class="contacts__call" title="Позвонить">+375 (29) 225-14-77</a>
+				</p>
+
+			</div>
+
+			<form class="form-contacts">
+
+				<h2 class="content__title">Задать вопрос</h2>
+
+				<div class="form__name">
+					<input id="name" name="name" type="text" placeholder="Введите Ваше имя" class="form__input" required>
+				</div>
+
+				<div class="form__email">
+					<input id="email" name="email" type="email" placeholder="Введите Ваш e-mail" class="form__input" required>
+				</div>
+
+				<div class="form__message">
+					<textarea id="message" name="message" placeholder="Текст сообщения..." class="form__input" required></textarea>
+				</div>
+
+				<div class="form__button">
+					<button type="submit" id="button-confirm" name="button-confirm" class="button__confirm">Отправить</button>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="shadow hidden"></div>
+
+		<div class="burger-menu__nav hidden">
+
+			<a href="index.html" class="logo burger-menu__logo">HOLSTYAK.BY</a>
+
+			<ul class="burger-menu__list">
+				<li><a href="index.html" class="burger-menu__link">Домой</a></li>
+
+				<li><a href="prices.html" class="burger-menu__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="burger-menu__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="burger-menu__link">Контакты</a></li>
+
+				<li><a href="order.html" class="burger-menu__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="burger-menu__link">Корзина</a></li>
+			</ul>
+
+			<a href="javascript: closeBurgerMenu()" class="burger-menu__nav-close" title="Закрыть">&times;</a>
+
+		</div>
+
+	</main>
+
+	<footer>
+
+		<div><a href="index.html" class="logo">HOLSTYAK.BY</a></div>
+
+		<div class="footer__icons">
+
+			<a href="tg://resolve?domain=mvlsk" target="_blank" class="footer__icon"><span class="icon-telegram" title="Написать в Telegram"></span></a>
+
+			<a href="https://www.instagram.com/holstyak/" target="_blank" class="footer__icon"><span class="icon-instagram" title="Перейти в Instagram"></span></a>
+
+			<a href="viber://chat?number=%2B375292251477" target="_blank" class="footer__icon footer__icon-viber" title="Написать в Viber"></a>
+
+			<a href="https://wa.me/375292251477" target="_blank" class="footer__icon"><span class="icon-whatsapp" title="Написать в WhatsApp"></span></a>
+
+			<a href="tel:+375292251477" target="_blank" class="footer__icon" title="Позвонить"><span class="icon-phone"></span></a>
+
+			<a href="mailto:holstyak.by@yandex.by" target="_blank" class="footer__icon"><span class="material-icons material-icons-outlined" title="Написать на почту">mail_outline</span></a>
+
+		</div>
+
+		<div class="copyright">&copy; 2022 made by Anastasiya Sachko</div>
+
+	</footer>
+
+	<script src="js/javascript.min.js"></script>
+
+</body>
+</html>

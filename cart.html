@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+
+	<link href="styles/styles.min.css" rel="stylesheet">
+	
+	<title>HOLSTYAK.BY | Корзина</title>
+</head>
+<body>
+
+	<header>
+
+		<a href="index.html" class="logo">HOLSTYAK.BY</a>
+
+		<nav>
+
+			<ul class="nav__list">
+				<li><a href="index.html" class="nav__link"><span class="material-icons material-icons-outlined">home</span></a></li>
+
+				<li><a href="prices.html" class="nav__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="nav__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="nav__link">Контакты</a></li>
+
+				<li><a href="order.html" class="nav__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="nav__link cart"><span class="material-icons material-icons-outlined">shopping_cart</span></a><span class="cart-count">2</span></li>
+			</ul>
+
+			<a href="javascript: showBurgerMenu()" class="burger-menu"><span class="material-icons material-icons-outlined">menu</span></a>
+
+		</nav>
+		
+	</header>
+
+	<main class="main__cart">
+		
+		<div class="cart__wrapper">
+
+			<div class="cart__items">
+
+				<div class="cart__header">
+					<p class="header__name">Товар</p>
+
+					<p class="header__services">Дополнительные услуги</p>
+
+					<p class="header__qty">Количество</p>
+
+					<p class="header__amount">Стоимость</p>
+				</div>
+
+				<div class="cart__item">
+
+					<div class="item__descr">
+						<img src="images/content/certificate.jpg" alt="item image" class="item__image">
+						<p class="item__name">Сертификат 50 BYN</p>
+						<a href="javascript: deleteItem(0)" class="item__delete">удалить</a>
+					</div>
+
+					<div class="item__services">
+						<ul>
+							<li>упаковка в подарочную бумагу с бантом</li>
+							<li>доставка по г.Бресту</li>
+						</ul>
+					</div>
+
+					<div class="item__qty">
+						<button class="item__qty-btn" onclick="increment(0); sum()">+</button>
+						<input class="item__qty-input" type="text" value="1" readonly>
+						<button class="item__qty-btn" onclick="decrement(0); sum()">-</button>
+					</div>
+
+					<div class="item__amount">
+						<p class="item__amount-sum">60</p>
+						<p class="item__amount-BYN">BYN</p>
+					</div>
+
+				</div>
+
+				<div class="cart__item">
+
+					<div class="item__descr">
+						<img src="images/content/photo.webp" alt="item image" class="item__image">
+						<p class="item__name">Фото на холсте 50X60</p>
+						<a href="javascript: deleteItem(1)" class="item__delete">удалить</a>
+					</div>
+
+					<div class="item__services">
+						<ul>
+							<li>сложная ретушь</li>
+							<li>самовывоз</li>
+						</ul>
+					</div>
+
+					<div class="item__qty">
+						<button class="item__qty-btn" onclick="increment(1); sum()">+</button>
+						<input class="item__qty-input" type="text" value="1" readonly>
+						<button class="item__qty-btn" onclick="decrement(1); sum()">-</button>
+					</div>
+
+					<div class="item__amount">
+						<p class="item__amount-sum">55</p>
+						<p class="item__amount-BYN">BYN</p>
+					</div>
+
+				</div>
+
+				<div class="item__amount_total">
+					<p class="item__amount-text_total">общая стоимость</p>
+					<p class="item__amount-sum_total">115</p>
+					<p class="item__amount-BYN_total">BYN</p>
+				</div>
+
+			</div>
+
+			<div class="cart__button">
+				<button type="submit" id="button-confirm" name="button-confirm" class="button__confirm" onclick="openPaymentWindow()">Заказать</button>
+			</div>
+
+		</div>
+
+		<div class="cart_empty hidden">
+			<p>Ваша корзина пуста </p>
+		</div>
+
+		<div class="payment hidden">
+
+			<h2 class="content__title">к оплате <span class="payment__amount-sum total-to-pay">115</span> <span class="text_emphasized">BYN</span></h2>
+
+			<form class="payment-block">
+
+				<div class="payment-form">
+					<label for="card-num" class="payment-form__label">Номер карты</label>
+
+					<input id="card-num" name="card-num" type="number" placeholder="0000 0000 0000 0000" class="payment-form__input payment-form__cart-num" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="expiry" class="payment-form__label">Действительна до</label>
+
+					<input id="expiry" name="expiry" type="number" placeholder="ММ / ГГ" class="payment-form__input payment-form__expiry" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="cardholder-name" class="payment-form__label">Имя держателя</label>
+
+					<input id="cardholder-name" name="cardholder-name" type="text" placeholder="Имя и фамилия латиницей" class="payment-form__input payment-form__name" pattern="[a-zA-Z]*?\s[a-zA-Z]*?" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="cvv" class="payment-form__label">CVV / CVC</label>
+
+					<input id="cvv" name="cvv" type="number" placeholder="***" class="payment-form__input payment-form__cvv" required>
+				</div>
+
+				<div class="payment-btns">
+					<button type="submit" id="button-1" name="button-1" class="payment-btn__cancel" onclick="cancelPayment()">Отменить</button>
+
+					<button type="button" id="button-2" name="button-2" class="payment-btn__confirm" onclick="makePayment()">Оплатить</button>
+				</div>
+
+			</form>
+
+			<img src="images/pay.png" alt="payment methods" class="payment__image">
+
+		</div>
+
+		<div class="modal hidden">
+			<p>Оплата прошла успешно!<br> Информация о заказе отправлена Вам на почту.</p>
+
+			<button type="submit" id="button-ok" name="button-ok" class="btn__ok" onclick="closeModalInCart()">OK</button>
+		</div>
+
+		<div class="shadow hidden"></div>
+
+		<div class="burger-menu__nav hidden">
+
+			<a href="index.html" class="logo burger-menu__logo">HOLSTYAK.BY</a>
+
+			<ul class="burger-menu__list">
+				<li><a href="index.html" class="burger-menu__link">Домой</a></li>
+
+				<li><a href="prices.html" class="burger-menu__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="burger-menu__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="burger-menu__link">Контакты</a></li>
+
+				<li><a href="order.html" class="burger-menu__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="burger-menu__link">Корзина</a></li>
+			</ul>
+
+			<a href="javascript: closeBurgerMenu()" class="burger-menu__nav-close" title="Закрыть">&times;</a>
+
+		</div>
+
+	</main>
+
+	<footer>
+
+		<div><a href="index.html" class="logo">HOLSTYAK.BY</a></div>
+
+		<div class="footer__icons">
+
+			<a href="tg://resolve?domain=mvlsk" target="_blank" class="footer__icon"><span class="icon-telegram" title="Написать в Telegram"></span></a>
+
+			<a href="https://www.instagram.com/holstyak/" target="_blank" class="footer__icon"><span class="icon-instagram" title="Перейти в Instagram"></span></a>
+
+			<a href="viber://chat?number=%2B375292251477" target="_blank" class="footer__icon footer__icon-viber" title="Написать в Viber"></a>
+
+			<a href="https://wa.me/375292251477" target="_blank" class="footer__icon"><span class="icon-whatsapp" title="Написать в WhatsApp"></span></a>
+
+			<a href="tel:+375292251477" target="_blank" class="footer__icon" title="Позвонить"><span class="icon-phone"></span></a>
+
+			<a href="mailto:holstyak.by@yandex.by" target="_blank" class="footer__icon"><span class="material-icons material-icons-outlined" title="Написать на почту">mail_outline</span></a>
+
+		</div>
+
+		<div class="copyright">&copy; 2022 made by Anastasiya Sachko</div>
+
+	</footer>
+
+	<script src="js/javascript.min.js"></script>
+
+</body>
+</html>

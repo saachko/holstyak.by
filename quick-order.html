@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+
+	<link href="styles/styles.min.css" rel="stylesheet">
+	
+	<title>HOLSTYAK.BY | Быстрый заказ</title>
+</head>
+<body>
+
+	<header>
+
+		<a href="index.html" class="logo">HOLSTYAK.BY</a>
+
+		<nav>
+
+			<ul class="nav__list">
+				<li><a href="index.html" class="nav__link"><span class="material-icons material-icons-outlined">home</span></a></li>
+
+				<li><a href="prices.html" class="nav__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="nav__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="nav__link">Контакты</a></li>
+
+				<li><a href="order.html" class="nav__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="nav__link cart"><span class="material-icons material-icons-outlined">shopping_cart</span></a><span class="cart-count">2</span></li>
+			</ul>
+
+			<a href="javascript: showBurgerMenu()" class="burger-menu"><span class="material-icons material-icons-outlined">menu</span></a>
+
+		</nav>
+		
+	</header>
+
+	<main class="main__quick-order">
+
+		<div class="quick-order__nav">
+			
+			<ul>
+				<li>
+					<a href="javascript: orderCert()" class="content__title quick-order__link quick-order__link-cert quick-order__link_active">Заказать сертификат</a>
+				</li>
+
+				<li>
+					<a href="javascript: orderCanvas()" class="content__title quick-order__link quick-order__link-canvas">Заказать макет холста</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<form class="quick-order__form">
+			
+			<div class="quick-order__form-cert">
+
+				<div class="form-cert">
+					<label for="select-cert" class="text_bold">Сумма сертификата:</label>
+					<select id="select-cert" name="amount">
+						<option>40 BYN</option>
+						<option>50 BYN</option>
+						<option>60 BYN</option>
+						<option>70 BYN</option>
+						<option>80 BYN</option>
+						<option>90 BYN</option>
+						<option>100 BYN</option>
+						<option>110 BYN</option>
+						<option>120 BYN</option>
+						<option>130 BYN</option>
+						<option>140 BYN</option>
+						<option>150 BYN</option>
+					</select>
+				</div>
+
+				<div class="form-cert">
+					<label class="text_bold">Дополнительные услуги:</label>
+
+					<div>
+						<input type="checkbox" name="services" id="gift-cert">
+						<label for="gift-cert">упаковка в подарочную бумагу с бантом</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="decor-cert">
+						<label for="decor-cert">индивидуальный дизайн сертификата</label>
+					</div>
+				</div>
+
+				<div class="form-cert">
+					<label class="text_bold">Получение:</label>
+
+					<div>
+						<input type="radio" name="delivery" id="office-cert" checked>
+						<label for="office-cert">самовывоз с офиса (г.Брест, ул.Горького, 31/1, офис 402)</label>				
+					</div>
+
+					<div>
+						<input type="radio" name="delivery" id="brest-cert">
+						<label for="brest-cert">доставка по г.Бресту</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="district-cert">
+						<label for="district-cert">доставка по Брестскому району</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="belpost-cert">
+						<label for="belpost-cert">доставка по Беларуси (Белпочта)</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="europochta-cert">
+						<label for="europochta-cert">доставка по Беларуси (Европочта)</label>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="quick-order__form-canvas hidden">
+
+				<p>Картина на холсте &ndash; очень индивидуальная вещь. Все макеты, заказанные через Быстрый заказ, будут согласованы с Вами по электронной почте.</p>
+
+				<p>Выбирая стиль Фото на холсте, Вы можете заказать печать любого изображения. Коллаж подразумевает составление макета коллажа из загруженных фотографий (до 10 штук).</p>
+
+				<div class="form-canvas">
+					<label for="select-canvas" class="text_bold">Стиль картины:</label>
+
+					<select id="select-canvas" name="style">
+						<option>Фото на холсте</option>
+						<option>Коллаж</option>
+					</select>
+				</div>
+
+				<div class="form-canvas">
+
+					<div>
+
+						<input type="radio" name="format" id="rect">
+						<label for="rect">прямоугольный холст</label>	
+
+						<select id="size-rect" name="size" class="form-canvas__size-rect">
+							<option>20X30</option>
+							<option>30X40</option>
+							<option>40X50</option>
+							<option>40X60</option>
+							<option>50X60</option>
+							<option>50X70</option>
+							<option>60X80</option>
+							<option>60X90</option>
+							<option>70X90</option>
+							<option>70X100</option>
+							<option>80X100</option>
+							<option>80X120</option>
+							<option>90X120</option>
+							<option>100X120</option>
+							<option>100X150</option>
+						</select>		
+
+					</div>
+
+					<div>
+						<input type="radio" name="format" id="square">
+
+						<label for="square">квадратный холст</label>
+
+						<select id="size-square" name="size" class="form-canvas__size-square">
+							<option>20X20</option>
+							<option>25X25</option>
+							<option>30X30</option>
+							<option>35X35</option>
+							<option>40X40</option>
+							<option>45X45</option>
+							<option>50X50</option>
+							<option>55X55</option>
+							<option>60X60</option>
+							<option>70X70</option>
+							<option>80X80</option>
+							<option>90X90</option>
+							<option>100X100</option>
+							<option>110X110</option>
+							<option>120X120</option>
+						</select>	
+					</div>
+
+				</div>
+
+				<div class="form-canvas">
+					<label class="text_bold">Дополнительные услуги:</label>
+
+					<div>
+						<input type="checkbox" name="services" id="retouch"><label for="retouch">сложная ретушь</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="face"><label for="face">замена лиц</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="add-man"><label for="add-man">добавление человека на фото</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="service" id="del-object"><label for="del-object">удаление объектов с фона</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="blur-bg"><label for="blur-bg">размытие фона</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="new-bg"><label for="new-bg">полная замена фона</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="old"><label for="old">восстановление и улучшение старой фотографии</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="art"><label for="art">арт-обработка</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="collage"><label for="collage">составление коллажа из более чем 10 фотографий</label>
+					</div>
+
+					<div>
+						<input type="checkbox" name="services" id="gift-canvas"><label for="gift-canvas">упаковка в подарочную бумагу с бантом</label>
+					</div>
+				</div>
+
+				<div class="form-canvas">
+					<label class="text_bold">Получение:</label>
+
+					<div>
+						<input type="radio" name="delivery" id="office-canvas" checked>
+						<label for="office-canvas">самовывоз с офиса (г.Брест, ул.Горького, 31/1, офис 402)</label>				
+					</div>
+
+					<div>
+						<input type="radio" name="delivery" id="brest-canvas">
+						<label for="brest-canvas">доставка по г.Бресту</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="district-canvas">
+						<label for="district-canvas">доставка по Брестскому району</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="belpost-canvas">
+						<label for="belpost-canvas">доставка по Беларуси (Белпочта)</label>
+					</div>
+					
+					<div>
+						<input type="radio" name="delivery" id="europochta-canvas">
+						<label for="europochta-canvas">доставка по Беларуси (Европочта)</label>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="quick-order__form-client">
+
+				<div class="form-client">
+					<input id="client-name" name="client-name" type="text" placeholder="Имя" class="form__input" required>
+				</div>
+
+				<div class="form-client">
+					<input id="client-surname" name="client-surname" type="text" placeholder="Фамилия" class="form__input" required>
+				</div>
+
+				<div class="form-client">
+					<input id="client-email" name="client-email" type="email" placeholder="E-mail" class="form__input" required>
+				</div>
+
+				<div class="form-client">
+					<input id="client-tel" name="tel" type="tel" placeholder="Номер телефона" pattern="\+{1,1}375(([2]{1}([5]{1}|[9]{1}))|([3]{1}[3]{1})|([4]{1}[4]{1}))[0-9]{7,7}" class="form__input" required>
+				</div>
+
+				<div class="form-client">
+					<input id="client-address" name="client-address" type="text" placeholder="Адрес доставки" class="form__input">
+				</div>
+
+				<div class="quick-order__add hidden">					
+					<input type="file" name="photos" id="photos" class="add__input" multiple>
+					<label for="photos" class="add__btn">
+						<span class="add-icon__wrapper"><img src="images/add.svg" class="add-icon" alt="Загрузить фотографии"></span>
+						<span class="add__text">Загрузить фотографии</span>
+					</label>
+				</div>	
+
+				<div class="item__amount_total">
+					<p class="item__amount-text_total">общая стоимость</p>
+					<p class="item__amount-sum_total">40</p>
+					<p class="item__amount-BYN_total">BYN</p>
+				</div>
+
+			</div>
+
+			<div class="payment-btns">
+				<button type="submit" id="button-cart" name="button-cart" class="payment-btn__cart" onclick="openModalToCart()">В корзину</button>
+
+				<button type="submit" id="button-pay" name="button-pay" class="payment-btn__confirm" onclick="openPaymentWindow()">Оплатить</button>
+			</div>
+
+		</form>
+
+
+		<div class="payment hidden">
+
+			<h2 class="content__title">к оплате <span class="payment__amount-sum">40</span> <span class="text_emphasized">BYN</span></h2>
+
+			<form class="payment-block">
+
+				<div class="payment-form">
+					<label for="card-num" class="payment-form__label">Номер карты</label>
+
+					<input id="card-num" name="card-num" type="number" placeholder="0000 0000 0000 0000" class="payment-form__input payment-form__cart-num" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="expiry" class="payment-form__label">Действительна до</label>
+
+					<input id="expiry" name="expiry" type="number" placeholder="ММ / ГГ" class="payment-form__input payment-form__expiry" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="cardholder-name" class="payment-form__label">Имя держателя</label>
+
+					<input id="cardholder-name" name="cardholder-name" type="text" placeholder="Имя и фамилия латиницей" class="payment-form__input payment-form__name" pattern="[a-zA-Z]*?\s[a-zA-Z]*?" required>
+				</div>
+
+				<div class="payment-form">
+					<label for="cvv" class="payment-form__label">CVV / CVC</label>
+
+					<input id="cvv" name="cvv" type="number" placeholder="***" class="payment-form__input payment-form__cvv" required>
+				</div>
+
+				<div class="payment-btns">
+					<button type="submit" id="button-1" name="button-1" class="payment-btn__cancel" onclick="cancelPayment()">Отменить</button>
+
+					<button type="submit" id="button-2" name="button-2" class="payment-btn__confirm" onclick="makePayment()">Оплатить</button>
+				</div>
+
+			</form>
+
+			<img src="images/pay.png" alt="payment methods" class="payment__image">
+
+		</div>
+
+		<div class="modal hidden">
+			<p>Оплата прошла успешно!<br>Детали заказа будут высланы Вам на почту.</p>
+
+			<button type="submit" id="button-ok" name="button-ok" class="payment-btn__cancel" onclick="closeModalOrder()">ОK</button>
+		</div>
+
+		<div class="modal-2 hidden">
+			<p>Заказ добавлен в корзину!<br>Теперь можете найти его в <a href="cart.html" title="Корзина" class="text_emphasized">корзине</a>.</p>
+
+			<button type="submit" id="button-ok-2" name="button-ok-2" class="payment-btn__cancel" onclick="closeModalToCart()">ОK</button>
+		</div>
+
+		<div class="shadow hidden"></div>
+
+		<div class="burger-menu__nav hidden">
+
+			<a href="index.html" class="logo burger-menu__logo">HOLSTYAK.BY</a>
+
+			<ul class="burger-menu__list">
+				<li><a href="index.html" class="burger-menu__link">Домой</a></li>
+
+				<li><a href="prices.html" class="burger-menu__link">Размеры и цены</a></li>
+
+				<li><a href="delivery.html" class="burger-menu__link">Доставка и оплата</a></li>
+
+				<li><a href="contacts.html" class="burger-menu__link">Контакты</a></li>
+
+				<li><a href="order.html" class="burger-menu__link">Заказать</a></li>
+
+				<li><a href="cart.html" class="burger-menu__link">Корзина</a></li>
+			</ul>
+
+			<a href="javascript: closeBurgerMenu()" class="burger-menu__nav-close" title="Закрыть">&times;</a>
+
+		</div>
+		
+	</main>
+
+	<footer>
+
+		<div><a href="index.html" class="logo">HOLSTYAK.BY</a></div>
+
+		<div class="footer__icons">
+
+			<a href="tg://resolve?domain=mvlsk" target="_blank" class="footer__icon"><span class="icon-telegram" title="Написать в Telegram"></span></a>
+
+			<a href="https://www.instagram.com/holstyak/" target="_blank" class="footer__icon"><span class="icon-instagram" title="Перейти в Instagram"></span></a>
+
+			<a href="viber://chat?number=%2B375292251477" target="_blank" class="footer__icon footer__icon-viber" title="Написать в Viber"></a>
+
+			<a href="https://wa.me/375292251477" target="_blank" class="footer__icon"><span class="icon-whatsapp" title="Написать в WhatsApp"></span></a>
+
+			<a href="tel:+375292251477" target="_blank" class="footer__icon" title="Позвонить"><span class="icon-phone"></span></a>
+
+			<a href="mailto:holstyak.by@yandex.by" target="_blank" class="footer__icon"><span class="material-icons material-icons-outlined" title="Написать на почту">mail_outline</span></a>
+
+		</div>
+
+		<div class="copyright">&copy; 2022 made by Anastasiya Sachko</div>
+		
+	</footer>
+
+	<script src="js/javascript.min.js"></script>
+	<script src="js/quick-order.js"></script>
+
+</body>
+</html>
