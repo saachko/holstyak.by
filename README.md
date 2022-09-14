@@ -1,2 +1,4 @@
 # holstyak.by
-my final project on front-end development courses
+front-end development course project
+
+https://saachko.github.io/holstyak.by/
